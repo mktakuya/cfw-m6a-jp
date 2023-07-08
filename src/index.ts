@@ -2,6 +2,6 @@ import { Hono } from 'hono';
 
 const app = new Hono();
 
-app.get('/', (c) => c.text('Hello Hono!'));
+app.all('*', (c) => fetch(c.req.raw))
 
 export default app;
