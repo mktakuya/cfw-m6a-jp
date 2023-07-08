@@ -1,5 +1,9 @@
 {
   "scripts": {
+    "lint": "eslint ./**/*.ts",
+    "lint:fix": "eslint --fix ./**/*.ts",
+    "format": "prettier -w ./**/*.ts",
+    "fix": "npm run format && npm run lint:fix",
     "dev": "wrangler dev src/index.ts",
     "deploy": "wrangler deploy --minify src/index.ts"
   },
@@ -8,6 +12,12 @@
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20230518.0",
+    "@types/prettier": "^2.7.3",
+    "@typescript-eslint/eslint-plugin": "^5.61.0",
+    "@typescript-eslint/parser": "^5.61.0",
+    "eslint": "^8.44.0",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "prettier": "^3.0.0",
     "wrangler": "^3.1.0"
   }
 }
